@@ -1,0 +1,9 @@
+app_home:
+    path: /home
+    controller: App\Controller\HomeController::index
+animal_new:
+    path: /animals/new
+    controller: App\Controller\AnimalController::new
+remove_animal:
+    path: /animals/remove/{id}
+    controller: App\Controller\AnimalsController::delete
