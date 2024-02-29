@@ -7,23 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Star Admin2 </title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="back/template/vendors/feather/feather.css">
-  <link rel="stylesheet" href="back/template/vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="back/template/vendors/ti-icons/css/themify-icons.css">
-  <link rel="stylesheet" href="back/template/vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="back/template/vendors/simple-line-icons/css/simple-line-icons.css">
-  <link rel="stylesheet" href="back/template/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href={{asset("back/template/vendors/feather/feather.css")}}>
+  <link rel="stylesheet" href={{asset("back/template/vendors/mdi/css/materialdesignicons.min.css")}}>
+  <link rel="stylesheet" href={{asset("back/template/vendors/ti-icons/css/themify-icons.css")}}>
+  <link rel="stylesheet" href={{asset("back/template/vendors/typicons/typicons.css")}}>
+  <link rel="stylesheet" href={{asset("back/template/vendors/simple-line-icons/css/simple-line-icons.css")}}>
+  <link rel="stylesheet" href={{asset("back/template/vendors/css/vendor.bundle.base.css")}}>
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="back/template/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-  <link rel="stylesheet" href="back/template/js/select.dataTables.min.css">
+  <link rel="stylesheet" href={{asset("back/template/vendors/datatables.net-bs4/dataTables.bootstrap4.css")}}>
+  <link rel="stylesheet" href={{asset("back/template/js/select.dataTables.min.css")}}>
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="back/template/css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href={{asset("back/template/css/vertical-layout-light/style.css")}}>
   <!-- endinject -->
-  <link rel="shortcut icon" href="back/template/images/favicon.png" />
+  <link rel="shortcut icon" href={{asset("back/template/images/favicon.png")}} />
 </head>
 <body>
+
   <div class="container-scroller"> 
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex align-items-top flex-row">
@@ -35,10 +36,10 @@
         </div>
         <div>
           <a class="navbar-brand brand-logo" href="index.html">
-            <img src="back/template/images/logo.svg" alt="logo" />
+            <img src={{asset("back/template/images/logo.svg")}} alt="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="back/template/images/logo-mini.svg" alt="logo" />
+            <img src={{asset("back/template/images/logo-mini.svg")}} alt="logo" />
           </a>
         </div>
       </div>
@@ -148,7 +149,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="back/template/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                  <img src={{asset("back/template/images/faces/face10.jpg")}} alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -157,7 +158,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="back/template/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  <img src={{asset("back/template/images/faces/face12.jpg")}} alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -166,7 +167,7 @@
               </a>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                  <img src="back/template/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  <img src={{asset("back/template/images/faces/face1.jpg")}} alt="image" class="img-sm profile-pic">
                 </div>
                 <div class="preview-item-content flex-grow py-2">
                   <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -177,10 +178,10 @@
           </li>
           <li class="nav-item dropdown d-none d-lg-block user-dropdown">
             <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-xs rounded-circle" src="back/template/images/faces/face8.jpg" alt="Profile image"> </a>
+              <img class="img-xs rounded-circle" src={{asset("back/template/images/faces/face8.jpg")}} alt="Profile image"> </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <div class="dropdown-header text-center">
-                <img class="img-md rounded-circle" src="back/template/images/faces/face8.jpg" alt="Profile image">
+                <img class="img-md rounded-circle" src={{asset("back/template/images/faces/face8.jpg")}} alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
                 <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
               </div>
@@ -197,6 +198,7 @@
         </button>
       </div>
     </nav>
+  {% block body %}
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_settings-panel.html -->
@@ -313,7 +315,7 @@
             </div>
             <ul class="chat-list">
               <li class="list active">
-                <div class="profile"><img src="back/template/images/faces/face1.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src={{asset("back/template/images/faces/face1.jpg")}} alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Thomas Douglas</p>
                   <p>Available</p>
@@ -321,7 +323,7 @@
                 <small class="text-muted my-auto">19 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="back/template/images/faces/face2.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src={{asset("back/template/images/faces/face2.jpg")}} alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <div class="wrapper d-flex">
                     <p>Catherine</p>
@@ -332,7 +334,7 @@
                 <small class="text-muted my-auto">23 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="back/template/images/faces/face3.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src={{asset("back/template/images/faces/face3.jpg")}} alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Daniel Russell</p>
                   <p>Available</p>
@@ -340,7 +342,7 @@
                 <small class="text-muted my-auto">14 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="back/template/images/faces/face4.jpg" alt="image"><span class="offline"></span></div>
+                <div class="profile"><img src={{asset("back/template/images/faces/face4.jpg")}} alt="image"><span class="offline"></span></div>
                 <div class="info">
                   <p>James Richardson</p>
                   <p>Away</p>
@@ -348,7 +350,7 @@
                 <small class="text-muted my-auto">2 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="back/template/images/faces/face5.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src={{asset("back/template/images/faces/face5.jpg")}} alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Madeline Kennedy</p>
                   <p>Available</p>
@@ -356,7 +358,7 @@
                 <small class="text-muted my-auto">5 min</small>
               </li>
               <li class="list">
-                <div class="profile"><img src="back/template/images/faces/face6.jpg" alt="image"><span class="online"></span></div>
+                <div class="profile"><img src={{asset("back/template/images/faces/face6.jpg")}} alt="image"><span class="online"></span></div>
                 <div class="info">
                   <p>Sarah Graves</p>
                   <p>Available</p>
@@ -370,6 +372,7 @@
       </div>
       <!-- partial -->
       <!-- partial:partials/_sidebar.html -->
+       
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -385,122 +388,66 @@
           </li>
           
           <li class="nav-item">
-  <li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-    <i class="menu-icon mdi mdi-card-text-outline"></i>
-    <span class="menu-title">Form elements</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="form-elements">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/forms/basic_elements.html">Basic Elements</a>
-      </li>
-    </ul>
-  </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-    <i class="menu-icon mdi mdi-chart-line"></i>
-    <span class="menu-title">Charts</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="charts">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/charts/chartjs.html">ChartJs</a>
-      </li>
-    </ul>
-  </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-    <i class="menu-icon mdi mdi-table"></i>
-    <span class="menu-title">Tables</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="tables">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/tables/basic-table.html">Basic table</a>
-      </li>
-    </ul>
-  </div>
-</li>
-<li class="nav-item">
-  <div class="collapse" id="icons">
-    <ul class="nav flex-column sub-menu">
-    </ul>
-  </div>
-</li>
-<li class="nav-item nav-category">pages</li>
-<li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-    <i class="menu-icon mdi mdi-account-circle-outline"></i>
-    <span class="menu-title">User Pages</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="auth">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/samples/login.html"> Login </a>
-      </li>
-    </ul>
-  </div>
-</li>
-
-<!-- Add Animal Button -->
-<li class="nav-item">
-  <a class="nav-link" href="/animals/new">Add Animal</a>
-</li>
-
-
-
-<h1>Edit Animal</h1>
-  <div>
-    <label for="animalId">Enter Animal ID:</label>
-    <input type="text" id="animalId" name="animalId">
-    <button onclick="editAnimal()">Edit Animal</button>
-  </div>
-
-  <script>
-    function editAnimal() {
-      // Get the value entered by the user
-      var animalId = document.getElementById("animalId").value;
-
-      // Construct the edit route
-      var editRoute = "/animals/" + animalId + "/edit";
-
-      // Redirect the user to the edit route
-      window.location.href = editRoute;
-    }
-  </script>
-
-  <h1>Remove Animal</h1>
-<div>
-  <label for="animalId">Enter Animal ID:</label>
-  <input type="text" id="animalId" name="animalId">
-  <button onclick="removeAnimal()">Remove Animal</button>
-</div>
-
-<script>
-  function removeAnimal() {
-    // Get the value entered by the user
-    var animalId = document.getElementById("animalId").value;
-
-    // Construct the remove route
-    var removeRoute = "/animals/remove/" + animalId;
-
-    // Redirect the user to the remove route
-    window.location.href = removeRoute;
-  }
-</script>
-
-
-
+            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Form elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href={{ path('app_profile_back' ) }}>change profile</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Charts</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href={{ path('app_register_admin' ) }}>create admin</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Tables</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href={{asset("back/template/pages/tables/basic-table.html")}}>Basic table</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+           
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-category">pages</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-account-circle-outline"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{{ path('app_logout' ) }}"> logout </a></li>
+              </ul>
+            </div>
+          </li>
          
         </ul>
       </nav>
+      
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
@@ -731,7 +678,7 @@
                                         </td>
                                         <td>
                                           <div class="d-flex ">
-                                            <img src="images/faces/face1.jpg" alt="">
+                                            <img src={{asset("back/template/images/faces/face1.jpg")}} alt="">
                                             <div>
                                               <h6>Brandon Washington</h6>
                                               <p>Head admin</p>
@@ -764,7 +711,7 @@
                                         </td>
                                         <td>
                                           <div class="d-flex">
-                                            <img src="back/template/images/faces/face2.jpg" alt="">
+                                            <img src={{asset("back/template/images/faces/face2.jpg")}} alt="">
                                             <div>
                                               <h6>Laura Brooks</h6>
                                               <p>Head admin</p>
@@ -797,7 +744,7 @@
                                         </td>
                                         <td>
                                           <div class="d-flex">
-                                            <img src="back/template/images/faces/face3.jpg" alt="">
+                                            <img src={{asset("back/template/images/faces/face3.jpg")}} alt="">
                                             <div>
                                               <h6>Wayne Murphy</h6>
                                               <p>Head admin</p>
@@ -830,7 +777,7 @@
                                         </td>
                                         <td>
                                           <div class="d-flex">
-                                            <img src="back/template/images/faces/face4.jpg" alt="">
+                                            <img src={{asset("back/template/images/faces/face4.jpg")}} alt="">
                                             <div>
                                               <h6>Matthew Bailey</h6>
                                               <p>Head admin</p>
@@ -863,7 +810,7 @@
                                         </td>
                                         <td>
                                           <div class="d-flex">
-                                            <img src="images/faces/face5.jpg" alt="">
+                                            <img src={{asset("back/template/images/faces/face5.jpg")}} alt="">
                                             <div>
                                               <h6>Katherine Butler</h6>
                                               <p>Head admin</p>
@@ -1154,7 +1101,7 @@
                                     <div class="mt-3">
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="back/template/images/faces/face1.jpg" alt="profile">
+                                          <img class="img-sm rounded-10" src={{asset("back/template/images/faces/face1.jpg")}} alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Brandon Washington</p>
                                             <small class="text-muted mb-0">162543</small>
@@ -1166,7 +1113,7 @@
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="back/template/images/faces/face2.jpg" alt="profile">
+                                          <img class="img-sm rounded-10" src={{asset("back/template/images/faces/face2.jpg")}} alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Wayne Murphy</p>
                                             <small class="text-muted mb-0">162543</small>
@@ -1178,7 +1125,7 @@
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="back/template/images/faces/face3.jpg" alt="profile">
+                                          <img class="img-sm rounded-10" src={{asset("back/template/images/faces/face3.jpg")}} alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Katherine Butler</p>
                                             <small class="text-muted mb-0">162543</small>
@@ -1190,7 +1137,7 @@
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between py-2 border-bottom">
                                         <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="back/template/images/faces/face4.jpg" alt="profile">
+                                          <img class="img-sm rounded-10" src={{asset("back/template/images/faces/face4.jpg")}} alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Matthew Bailey</p>
                                             <small class="text-muted mb-0">162543</small>
@@ -1202,7 +1149,7 @@
                                       </div>
                                       <div class="wrapper d-flex align-items-center justify-content-between pt-2">
                                         <div class="d-flex">
-                                          <img class="img-sm rounded-10" src="back/template/images/faces/face5.jpg" alt="profile">
+                                          <img class="img-sm rounded-10" src={{asset("back/template/images/faces/face5.jpg")}} alt="profile">
                                           <div class="wrapper ms-3">
                                             <p class="ms-1 mb-1 fw-bold">Rafell John</p>
                                             <small class="text-muted mb-0">Alaska, USA</small>
@@ -1227,6 +1174,7 @@
             </div>
           </div>
         </div>
+        {% endblock %}
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
         <footer class="footer">
@@ -1244,25 +1192,23 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-  <script src="back/template/vendors/js/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <script src="back/template/vendors/chart.js/Chart.min.js"></script>
-  <script src="back/template/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-  <script src="back/template/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src={{asset("back/template/vendors/js/vendor.bundle.base.js")}}></script>
 
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="back/template/js/off-canvas.js"></script>
-  <script src="back/template/js/hoverable-collapse.js"></script>
-  <script src="back/template/js/template.js"></script>
-  <script src="back/template/js/settings.js"></script>
-  <script src="back/template/js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="back/template/js/dashboard.js"></script>
-  <script src="back/template/js/Chart.roundedBarCharts.js"></script>
-  <!-- End custom js for this page-->
+  <script src={{asset("back/template/vendors/chart.js/Chart.min.js")}}></script>
+  <script src={{asset("back/template/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js")}}></script>
+  <script src={{asset("back/template/vendors/progressbar.js/progressbar.min.js")}}></script>
+
+  <script src={{asset("back/template/js/off-canvas.js")}}></script>
+  <script src={{asset("back/template/js/hoverable-collapse.js")}}></script>
+  <script src={{asset("back/template/js/template.js")}}></script>
+  <script src={{asset("back/template/js/settings.js")}}></script>
+  <script src={{asset("back/template/js/todolist.js")}}></script>
+
+
+  <script src={{asset("back/template/js/dashboard.js")}}></script>
+  <script src={{asset("back/template/js/Chart.roundedBarCharts.js")}}></script>
+
+
 </body>
 
 </html>

@@ -7,3 +7,9 @@ animal_new:
 remove_animal:
     path: /animals/remove/{id}
     controller: App\Controller\AnimalsController::delete
+app_demande:
+    path: '/demande/{animalId}'
+    controller: App\Controller\DemandeController::demande
+edit_demande:
+    path: '/demandes/{id}/edit'
+    controller: App\Controller\DemandeController::edit

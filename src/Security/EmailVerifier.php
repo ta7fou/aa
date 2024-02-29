@@ -37,6 +37,18 @@ class EmailVerifier
         $this->mailer->send($email);
     }
 
+    public function sendEmailConfirmationAdmin(string $verifyEmailRouteName, UserInterface $user, TemplatedEmail $email): void
+    {
+
+        $context = $email->getContext();
+        $context['Email'] = $user->getEmail();
+        $context['Password'] = $_ENV['PASSWORD_ADMIN_Default'];
+
+        $email->context($context);
+
+        $this->mailer->send($email);
+    }
+
     /**
      * @throws VerifyEmailExceptionInterface
      */

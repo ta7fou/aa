@@ -1,0 +1,19 @@
+{% extends 'baseBack.html.twig' %}
+
+{% block title %}
+    <title>Edit Profile</title>
+{% endblock %}
+
+{% block body %}
+
+    <script>
+        window.onload = function() {
+            alert("You need to change your password.");
+        };
+    </script>
+
+    <h1>Edit Profile</h1>
+
+    {{ form_start(form) }}
+    {{ form_end(form) }}
+{% endblock %}

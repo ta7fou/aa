@@ -153,27 +153,40 @@
 <div class="animal-section mt-150 mb-150">
     <div class="container">
 
-        <!-- Animal List -->
+     <!-- Animal List -->
 <div class="row animal-lists">
     {% for animal in animals %}
     <div class="col-lg-4 col-md-6 text-center">
         <div class="single-animal-item">
             <div class="animal-image">
                 <img src="{{ asset('img/animals/' ~ animal.image) }}" alt="{{ animal.name }}">
-
-            </div>
+ <           </div>
             <h3>{{ animal.name }}</h3>
+            <p> Id: {{animal.id}}</p>
             <p>Age: {{ animal.age }}</p>
             <p>Sex: {{ animal.sexe }}</p>
             <p>Species: {{ animal.espece }}</p>
             <p>Description: {{ animal.description }}</p>
             <!-- Add your adopt button or any other action button here -->
-            <a href="/adopt/{{ animal.id }}" class="adopt-btn"><i class="fas fa-paw"></i> Adopt</a>
+            <a href="{{ path('app_demande', { 'animalId': animal.id }) }}" class="adopt-btn" data-toggle="tooltip" data-placement="top" title="Make a demande for adoption"><i class="fas fa-paw"></i> demande</a>
+            
+            <!-- Button to check demandes -->
+            <a href="{{ path('demandes', { 'userId': app.user.id }) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Check Your Demandes">Check Demandes</a>
+            
+            <!-- Button to edit a demande (placeholder) -->
+            <a href="#" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Edit Your Demande">Edit Demande</a>
+            
+            <!-- Button to remove a demande (placeholder) -->
+            <a href="#" class="btn btn-danger" data-toggle="tooltip" data-placement="top" title="Remove Your Demande">Remove Demande</a>
         </div>
     </div>
     {% endfor %}
 </div>
 <!-- End Animal List -->
+
+
+
+
     </div>
 </div>
 
