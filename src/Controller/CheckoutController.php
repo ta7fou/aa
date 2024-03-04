@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CheckoutController extends AbstractController
 {
-    #[Route('/checkout/liste', name: 'app_checkliste')]
+    #[Route('/admin/listcommande', name: 'app_checkliste')]
     public function index(): Response
     {
         $facture = $this->getDoctrine()->getRepository(facture::class)->findAll();
@@ -42,7 +42,7 @@ class CheckoutController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    #[Route('cheakout/editc/{id}', name: 'edit_facture')]
+    #[Route('admin/editc/{id}', name: 'edit_facture')]
     public function edit(Request $request, Facture $facture): Response
     {
         $form = $this->createForm(FactureType::class, $facture);
@@ -59,7 +59,7 @@ class CheckoutController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    #[Route('cheakout/remove/{id}', name: 'remove_facture')]
+    #[Route('admin/remove/{id}', name: 'remove_facture')]
     public function delete($id, EntityManagerInterface $entityManager, FactureRepository $factureRepository): Response
     {
         $facture = $factureRepository->find($id);   // Retrieve the animal to be removed
