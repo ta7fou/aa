@@ -1,17 +1,57 @@
+{% extends 'baseBack.html.twig' %}
 
-
-{% block title %}Register{% endblock %}
+{% block title %}
+    <title>Edit Profile</title>
+{% endblock %}
 
 {% block body %}
-    {% for flash_error in app.flashes('verify_email_error') %}
-        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-    {% endfor %}
 
-    <h1>Register</h1>
+    <script>
+        window.onload = function() {
+            alert("You need to change your password.");
+        };
+    </script>
 
-    {{ form_errors(registrationForm) }}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="text-center mb-4">Edit Profile</h1>
 
-    {{ form_start(registrationForm) }}
+                {{ form_start(registrationForm) }}
 
-    {{ form_end(registrationForm) }}
+                <div class="form-group">
+                    {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.Nom, {'attr': {'class': 'form-control', 'placeholder': 'Last Name'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.Prenom, {'attr': {'class': 'form-control', 'placeholder': 'First Name'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.address, {'attr': {'class': 'form-control', 'placeholder': 'Address'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.dateNaissance, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group form-check">
+                    {{ form_row(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+                    {{ form_label(registrationForm.agreeTerms, 'Agree to terms', {'label_attr': {'class': 'form-check-label'}}) }}
+                    {{ form_errors(registrationForm.agreeTerms) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(registrationForm.valider, {'attr': {'class': 'btn btn-primary btn-block'}}) }}
+                </div>
+
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

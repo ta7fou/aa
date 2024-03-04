@@ -91,7 +91,7 @@
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+										
 										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 									</div>
 								</li>
@@ -150,67 +150,93 @@
 						<table class="cart-table">
 							<thead class="cart-table-head">
 								<tr class="table-head-row">
-									<th class="product-remove"></th>
+									
 									<th class="product-image">Product Image</th>
 									<th class="product-name">Name</th>
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
+									<th>Price</th>
+									
+									
 									
 								</tr>
 							</thead>
 							<tbody>
+							
+        {% for p in produit %}
+	
+
 								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="img/products/product-img-1.jpg" alt=""></td>
-									<td class="product-name">Strawberry</td>
-									<td class="product-price">$85</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
+									
+									<td class="product-image"><img src="{{ asset('img/products/' ~ p.image) }}"></td>
+									<td class="product-name">{{ p.nom }}</td>
+									<td class="product-price">{{p.priu}} TND</td>
+									  <td>
+                            <form action="{{ path('update_cart', {'id': p.id}) }}" method="post">
+                           
+                                <button type="submit" class="btn btn-sm btn-secondary" name="action" value="decrease">-</button>
+                                <span>{{ cart[p.id] }}</span>
+                                <button type="submit" class="btn btn-sm btn-primary" name="action" value="increase">+</button>
+                                
+                            </form>
+                        </td>
+									
+									
+									<td>
+									{{ p.priu * cart[p.id] }} TND
+									</td>
+									 
+                                   
+                                    
+                                
 									
 								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="img/products/product-img-2.jpg" alt=""></td>
-									<td class="product-name">Berry</td>
-									<td class="product-price">$70</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
+								 {% else %}
+                            <tr>
+                                <td colspan="5">Votre panier est vide</td>
+                            </tr>    
+							
+                        
+								<tr class="total-data">
+									<td><strong>Total: </strong></td>
+									
 									
 								</tr>
-								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="img/products/product-img-3.jpg" alt=""></td>
-									<td class="product-name">Lemon</td>
-									<td class="product-price">$35</td>
-									<td class="product-quantity"><input type="number" placeholder="0"></td>
-									
-								</tr>
+								
 							</tbody>
+							{% endfor %}
 						</table>
 					</div>
 				</div>
-
+                 
 				<div class="col-lg-4">
 					<div class="total-section">
 						<table class="total-table">
 							<thead class="total-table-head">
+
 								<tr class="table-total-row">
 									<th>Total</th>
 									<th>Price</th>
 								</tr>
 							</thead>
+							
 							<tbody>
-								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>$500</td>
-								</tr>
+								
 								
 								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td>$500</td>
+									<td><strong>{{ totalAmount }} TND </strong></td>
+									
 								</tr>
+								
+								
 							</tbody>
+							
+							
 						</table>
 						<div class="cart-buttons">
-							<a href="/cart" class="boxed-btn">Update Cart</a>
+							<form action="{{ path('clear_cart') }}" method="post" class="clear-cart-form">
+                             <button type="submit" class="btn btn-warning">Clear Cart</button> 
 							<a href="/checkout" class="boxed-btn black">Check Out</a>
 						</div>
 					</div>

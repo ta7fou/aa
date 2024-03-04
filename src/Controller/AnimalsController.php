@@ -2,29 +2,43 @@
 
 namespace App\Controller;
 
+use Knp\Component\Pager\PaginatorInterface;
+use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Animals;
+use App\Entity\Demande;
 use App\Form\AnimalType;
 use App\Repository\AnimalsRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AnimalsController extends AbstractController
 {
-    #[Route('/animals', name: 'app_animals')]
-    public function index(): Response
-    {
-        // Get the list of animals from the database
-        $animals = $this->getDoctrine()->getRepository(Animals::class)->findAll();
+   
 
-        // Render the template and pass the list of animals
-        return $this->render('animals/index.html.twig', [
-            'animals' => $animals,
-        ]);
-    }
+#[Route('/animals', name: 'app_animals')]
+public function index(Request $request, PaginatorInterface $paginator): Response
+{
+    // Get the list of animals query
+    $query = $this->getDoctrine()->getRepository(Animals::class)->createQueryBuilder('a')
+        ->getQuery();
+
+    // Paginate the query
+    $animals = $paginator->paginate(
+        $query,
+        $request->query->getInt('page', 1), // Get the page parameter from the request, default to 1
+        6 // Items per page
+    );
+
+    // Render the template and pass the paginated list of animals
+    return $this->render('animals/index.html.twig', [
+        'pagination' => $animals,
+    ]);
+}
+
 
     #[Route('/animals/new', name: 'app_animals_new')]
     

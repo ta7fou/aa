@@ -32,6 +32,45 @@
 	<link rel="stylesheet" href="css/responsive.css">
 
 </head>
+
+<style>
+    /* Search bar style */
+    .search-bar {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #555;
+        transition: border-color 0.3s ease;
+    }
+
+    .search-bar input[type="text"]:focus {
+        border-color: #007bff;
+    }
+
+    .search-bar button[type="submit"] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .search-bar button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
 <body>
 	
 	<!--PreLoader-->
@@ -140,74 +179,60 @@
 		</div>
 	</div>
 	<!-- end breadcrumb section -->
+	<!-- Search bar -->
+<!-- Search bar -->
+
 
 	<!-- products -->
 	<div class="product-section mt-150 mb-150">
-		<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="search-bar">
+                    <form action="{{ path('app_reserch') }}" method="GET">
+                        <input type="text" name="q" placeholder="Search for products..." class="form-control">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="sorting-options text-lg-end mt-3 mt-lg-0">
+                    <span class="me-2">Sort by Price:</span>
+                    <a href="{{ path('app_reserch', {'order': 'asc'}) }}" class="btn btn-link">Low to High</a>
+                    <a href="{{ path('app_reserch', {'order': 'desc'}) }}" class="btn btn-link">High to Low</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-			
+
+	
+</div>
+
 
 			<div class="row product-lists">
+
+
+			{% for p in produit %}
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href=""><img src="img/products/product-img-1.jpg" alt=""></a>
+							<img src="{{ asset('img/products/' ~ p.image) }}" alt="{{ p.nom }}">
 						</div>
-						<h3>engrais chimique</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-						<a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<h3>{{p.nom}}</h3>
+						<p class="product-price"><span>{{p.priu}} TND</span></p>
+						<p class="product-statut"><span>{{p.statut}}</span></p>
+						<a href="{{ path('add_to_cart', {'id': p.id}) }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					             
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center berry">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href=""><img src="img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>pack jardinage</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center lemon">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href=""><img src="img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>fruit du dragon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href=""><img src="img/products/product-img-4.jpg" alt=""></a>
-						</div>
-						<h3>graine de chia</h3>
-						<p class="product-price"><span>Per Kg</span> 50$ </p>
-						<a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href=""><img src="img/products/product-img-5.jpg" alt=""></a>
-						</div>
-						<h3>pack camping</h3>
-						<p class="product-price"><span>Per Kg</span> 45$ </p>
-						<a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href=""><img src="img/products/product-img-6.jpg" alt=""></a>
-						</div>
-						<h3>engrais biologique</h3>
-						<p class="product-price"><span>Per Kg</span> 80$ </p>
-						<a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-					</div>
-				</div>
+				{% endfor %}
+				
+				
+				
+				
+				
 			</div>
 
 			

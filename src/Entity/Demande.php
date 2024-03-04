@@ -13,19 +13,21 @@ class Demande
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(name: 'id_user')]
+    private ?int $id_user = null;
+
     #[ORM\Column(length: 255)]
     private ?string $Sujet = null;
 
     #[ORM\Column(length: 255)]
     private ?string $details = null;
 
-    #[ORM\Column]
-    private ?int $id_user = null;
-
     #[ORM\ManyToOne(inversedBy: 'demandes')]
-#[ORM\JoinColumn(name: 'animal_id', referencedColumnName: 'id', nullable: false)]
-private ?Animals $animalId = null;
+    #[ORM\JoinColumn(name: 'animal_id', referencedColumnName: 'id', nullable: false)]
+    private ?Animals $animalId = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
 
     public function getId(): ?int
     {
@@ -37,7 +39,7 @@ private ?Animals $animalId = null;
         return $this->Sujet;
     }
 
-    public function setSujet(string $Sujet): static
+    public function setSujet(string $Sujet): self
     {
         $this->Sujet = $Sujet;
 
@@ -49,33 +51,47 @@ private ?Animals $animalId = null;
         return $this->details;
     }
 
-    public function setDetails(string $details): static
+    public function setDetails(string $details): self
     {
         $this->details = $details;
 
         return $this;
     }
 
+    
     public function getIdUser(): ?int
     {
         return $this->id_user;
     }
 
-    public function setIdUser(int $id_user): static
+    public function setIdUser(?int $idUser): self
     {
-        $this->id_user = $id_user;
+        $this->id_user = $idUser;
 
         return $this;
     }
+
 
     public function getAnimalId(): ?Animals
     {
         return $this->animalId;
     }
 
-    public function setAnimalId(?Animals $animalId): static
+    public function setAnimalId(?Animals $animalId): self
     {
         $this->animalId = $animalId;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
         return $this;
     }

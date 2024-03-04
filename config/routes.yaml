@@ -13,3 +13,7 @@ app_demande:
 edit_demande:
     path: '/demandes/{id}/edit'
     controller: App\Controller\DemandeController::edit
+demande:
+    path: '/demandes/{userId}'
+    controller: 'App\Controller\DemandeController::showDemandes'
+

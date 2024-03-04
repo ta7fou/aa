@@ -150,15 +150,13 @@
     <<!-- end breadcrumb section -->
 
 
-{% block title %}Edit Demande{% endblock %}
 
 {% block body %}
-    <h1>Edit Demande</h1>
+    {% block title %}Edit Demande{% endblock %}
+
 
     {{ form_start(form) }}
-    {{ form_row(form.Sujet) }}
-    {{ form_row(form.details) }}
-    {# Add more form fields as needed #}
+    
 
     <button type="submit">Save Changes</button>
     {{ form_end(form) }}
