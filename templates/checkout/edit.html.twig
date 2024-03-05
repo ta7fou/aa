@@ -28,6 +28,11 @@
                 {{ form_widget(form.tel, {'attr': {'class': 'form-control'}}) }}
                 {{ form_errors(form.tel) }}
             </div>
+              <div class="form-group">
+                {{ form_label(form.prixtotal, 'prixtotal') }}
+                {{ form_widget(form.prixtotal, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.prixtotal) }}
+            </div>
             <button type="submit" class="btn btn-primary">Edit</button>
             {{ form_end(form) }}
         </div>

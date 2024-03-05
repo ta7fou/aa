@@ -68,7 +68,10 @@ class FactureType extends AbstractType
                         'message' => 'The phone number "{{ value }}" is not valid. It should contain exactly 10 digits.',
                     ]),
                 ],
-            ]);
+            ])
+            ->add('prixtotal')
+            
+            ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

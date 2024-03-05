@@ -1,13 +1,21 @@
 <?php
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use App\Repository\FactureRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: FactureRepository::class)]
 class Facture
+
 {
+    public function __construct()
+    {
+        $this->produits = new ArrayCollection();
+       
+        
+    }
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -24,6 +32,12 @@ class Facture
 
     #[ORM\Column]
     private ?int $tel = null;
+
+    #[ORM\Column]
+    private ?int $prixtotal = null;
+
+    #[ORM\ManyToOne(inversedBy: 'factures')]
+    private ?user $user = null;
 
     public function getId(): ?int
     {
@@ -74,6 +88,30 @@ class Facture
     public function setTel(int $tel): static
     {
         $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getPrixtotal(): ?int
+    {
+        return $this->prixtotal;
+    }
+
+    public function setPrixtotal(int $prixtotal): static
+    {
+        $this->prixtotal = $prixtotal;
+
+        return $this;
+    }
+
+    public function getUser(): ?user
+    {
+        return $this->user;
+    }
+
+    public function setUser(?user $user): static
+    {
+        $this->user = $user;
 
         return $this;
     }
