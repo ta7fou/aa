@@ -1,0 +1,23 @@
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Gestion des objectifs pour : {{ camping.adressecamp }}</h1>
+
+    
+           {% if objectif is null %}
+        <p class="lead"> Aucun objectif trouvé pour cette campagne. </p>
+    {% else %}
+        <div class="event-thumbnail">
+
+            <img src="{{ asset('img/objectif/' ~ objectif.imageobj) }}" alt="{{ objectif.imageobj }}">
+        </div>
+        <div class="event-content">
+            <ul class="event-info">
+                <li><strong>Type d'objectif:</strong> {{ objectif.descobj }}</li>
+                <li><strong>Résultat d'objectif:</strong> {{ objectif.resultatobj }}</li>
+            </ul>
+            
+        </div>
+    {% endif %}
+       
+</div>
+{% endblock %}

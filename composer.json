@@ -12,6 +12,7 @@
         "doctrine/doctrine-bundle": "^2.11",
         "doctrine/doctrine-migrations-bundle": "^3.3",
         "doctrine/orm": "^3.0",
+        "knplabs/knp-paginator-bundle": "^5.9",
         "phpmailer/phpmailer": "^6.9",
         "scss/scss": "^1.4",
         "sensio/framework-extra-bundle": "^6.2",

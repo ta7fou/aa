@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -46,6 +48,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(length: 255)]
     private ?string $address = null;
+
+    #[ORM\ManyToOne(inversedBy: 'user')]
+    private ?PartCamp $partCamp = null;
+
+    #[ORM\OneToMany(targetEntity: PartCamp::class, mappedBy: 'user')]
+    private Collection $partCamps;
+
+    public function __construct()
+    {
+        $this->partCamps = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -190,6 +203,48 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAddress(string $address): static
     {
         $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPartCamp(): ?PartCamp
+    {
+        return $this->partCamp;
+    }
+
+    public function setPartCamp(?PartCamp $partCamp): static
+    {
+        $this->partCamp = $partCamp;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, PartCamp>
+     */
+    public function getPartCamps(): Collection
+    {
+        return $this->partCamps;
+    }
+
+    public function addPartCamp(PartCamp $partCamp): static
+    {
+        if (!$this->partCamps->contains($partCamp)) {
+            $this->partCamps->add($partCamp);
+            $partCamp->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePartCamp(PartCamp $partCamp): static
+    {
+        if ($this->partCamps->removeElement($partCamp)) {
+            // set the owning side to null (unless already changed)
+            if ($partCamp->getUser() === $this) {
+                $partCamp->setUser(null);
+            }
+        }
 
         return $this;
     }

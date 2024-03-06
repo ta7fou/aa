@@ -13,3 +13,12 @@ app_demande:
 edit_demande:
     path: '/demandes/{id}/edit'
     controller: App\Controller\DemandeController::edit
+demande:
+    path: '/demandes/{userId}'
+    controller: 'App\Controller\DemandeController::showDemandes'
+
+app_camping_objectifs:
+    path: '/camping/{id}/objectifs'
+    controller: 'App\Controller\CampingController::showObjectifsByCamping'
+    methods: ['GET']
+

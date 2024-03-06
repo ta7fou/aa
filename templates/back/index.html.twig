@@ -385,119 +385,62 @@
           </li>
           
           <li class="nav-item">
-  <li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-    <i class="menu-icon mdi mdi-card-text-outline"></i>
-    <span class="menu-title">Form elements</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="form-elements">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/forms/basic_elements.html">Basic Elements</a>
-      </li>
-    </ul>
-  </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
-    <i class="menu-icon mdi mdi-chart-line"></i>
-    <span class="menu-title">Charts</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="charts">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/charts/chartjs.html">ChartJs</a>
-      </li>
-    </ul>
-  </div>
-</li>
-<li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
-    <i class="menu-icon mdi mdi-table"></i>
-    <span class="menu-title">Tables</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="tables">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/tables/basic-table.html">Basic table</a>
-      </li>
-    </ul>
-  </div>
-</li>
-<li class="nav-item">
-  <div class="collapse" id="icons">
-    <ul class="nav flex-column sub-menu">
-    </ul>
-  </div>
-</li>
-<li class="nav-item nav-category">pages</li>
-<li class="nav-item">
-  <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-    <i class="menu-icon mdi mdi-account-circle-outline"></i>
-    <span class="menu-title">User Pages</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="auth">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <a class="nav-link" href="back/template/pages/samples/login.html"> Login </a>
-      </li>
-    </ul>
-  </div>
-</li>
-
-<!-- Add Animal Button -->
-<li class="nav-item">
-  <a class="nav-link" href="/animals/new">Add Animal</a>
-</li>
-
-
-
-<h1>Edit Animal</h1>
-  <div>
-    <label for="animalId">Enter Animal ID:</label>
-    <input type="text" id="animalId" name="animalId">
-    <button onclick="editAnimal()">Edit Animal</button>
-  </div>
-
-  <script>
-    function editAnimal() {
-      // Get the value entered by the user
-      var animalId = document.getElementById("animalId").value;
-
-      // Construct the edit route
-      var editRoute = "/animals/" + animalId + "/edit";
-
-      // Redirect the user to the edit route
-      window.location.href = editRoute;
-    }
-  </script>
-
-  <h1>Remove Animal</h1>
-<div>
-  <label for="animalId">Enter Animal ID:</label>
-  <input type="text" id="animalId" name="animalId">
-  <button onclick="removeAnimal()">Remove Animal</button>
-</div>
-
-<script>
-  function removeAnimal() {
-    // Get the value entered by the user
-    var animalId = document.getElementById("animalId").value;
-
-    // Construct the remove route
-    var removeRoute = "/animals/remove/" + animalId;
-
-    // Redirect the user to the remove route
-    window.location.href = removeRoute;
-  }
-</script>
-
-
-
+            <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <i class="menu-icon mdi mdi-card-text-outline"></i>
+              <span class="menu-title">Form elements</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="back/template/pages/forms/basic_elements.html">Basic Elements</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Charts</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="back/template/pages/charts/chartjs.html">ChartJs</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Tables</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/tables/camping">camping</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+           
+            <div class="collapse" id="icons">
+              <ul class="nav flex-column sub-menu">
+                
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item nav-category">pages</li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-account-circle-outline"></i>
+              <span class="menu-title">User Pages</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="back/template/pages/samples/login.html"> Login </a></li>
+              </ul>
+            </div>
+          </li>
          
         </ul>
       </nav>
